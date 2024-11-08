@@ -2,9 +2,79 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Простой текст</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма с фоном и полями ввода</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('https://strannik.crimea.ru/images/stories/zelenyLuch/romanticaZakata2.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            max-width: 800px;
+            max-height: 600px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 450px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-container label {
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .input-container input {
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .input-container input::placeholder {
+            color: #888;
+        }
+    </style>
 </head>
 <body>
-    <p>Это простой текст на странице.</p>
+    <div class="container">
+        <div class="overlay">
+            <div class="input-container">
+                <label for="login">Login</label>
+                <input type="text" id="login" placeholder="Введите логин">
+            </div>
+            <div class="input-container">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Введите пароль">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
